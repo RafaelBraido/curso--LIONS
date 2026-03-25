@@ -1,4 +1,4 @@
-let nums = [10, 12, 120, 2, 90,14];
+let nums = [10, 12, 120, 2, 90, 14];
 let aura = 0;
 
 for (let i = 0; i < nums.length; i++) {
