@@ -24,7 +24,7 @@ function mostrarMenu() {
 
     rl.question("Escolha uma opção: ", (opcao) => {
         if (opcao === "1") {
-            cadastrarAluno();
+            cadastraraluno();
         } else if (opcao === "2") {
             listarAluno();
         } else if (opcao === "3") {
