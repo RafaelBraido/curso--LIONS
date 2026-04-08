@@ -18,11 +18,9 @@ function mostrarMenu() {
     console.log("2 - LISTAR CLIENTE");
     console.log("3 - BUSCAR CLIENTE POR ID");
     console.log("4 - ATUALIZAR CLIENTE");
-    console.log("5 - DIGITE SEU ID ");
-    console.log("6 - DIGITE SEU CPF");
-    console.log("7 - TELEFONE DO  CLIENTE");
-    console.log("8 - REMOVER CLIENTE");
-    console.log("9 - SAIR");
+    console.log("5 - DIGITE SEU ID ");;
+    console.log("6 - REMOVER CLIENTE");
+    console.log("7 - SAIR");
     console.log("===========================")
 
     rl.question("Escolha uma opção: ", (opcao) => {
@@ -37,10 +35,6 @@ function mostrarMenu() {
         } else if (opcao === "5") {
             removerCliente();
         } else if (opcao === "6") {
-            DigiteSeuCpf();
-        } else if (opcao === "7") {
-            DigiteSeuTelefone();
-        } else if (opcao === "8") {
             console.log("Remover Cliente");
         } else if (opcao === "9") {
             console.log("saindo...");
@@ -85,13 +79,13 @@ function atualizarCliente() {
             mostrarMenu();
             return;
         }
-        rl.question("Digite o novo Nome: ", (NovoNome) => {
-            rl.question("Digite a nova Idade: ", (NovaIdade) => {
+        rl.question("Digite o novo Nome: ", (novoNome) => {
+            rl.question("Digite a nova Idade: ", (novaIdade) => {
                 rl.question("Digite o novo cpf: ", (novoCpf) => {
                     rl.question("Digite o novo telefone: ", (novoTelefone) => {
                         rl.question("Digite o novo ID: ", (novoId) => {
                             novoId = Number(novoId);
-                        novoTelefone = Number(telefone);
+                        novoTelefone = Number(novoTelefone);
 
                         if (novoNome === "" || novaIdade === "" || novoCpf === "" || novoTelefone === "") {
                             console.log("Todos os dados precisam ser preenchidos");
@@ -99,14 +93,14 @@ function atualizarCliente() {
                             return;
                         }
 
-                        if (novaPlaca === "" || novoAno <= 0 || novocliente < 0) {
-                            console.log("ano ou preco por dia inválido");
+                        if (novoNome === "" || novaIdade <= 0 || novoCpf === "" || novoTelefone === "") {
+                            console.log("Dados inválidos");
                             mostrarMenu();
                             return;
                         }
                         cliente.Nome = novoNome;
                         cliente.idade = novaIdade;
-                        cliente.ano = novoAno;
+                        cliente.ano = novoTelefone;
                         cliente.cpf = novoCpf;
 
                         console.log("atualizado com sucesso");
@@ -121,7 +115,7 @@ function atualizarCliente() {
 }
 
 
-function listarClientes() {
+function listarCliente() {
     console.log("Listar Clientes");
 
     if (Clientes.length === 0) {
@@ -183,15 +177,19 @@ function cadastrarCliente() {
                         mostrarMenu();
                         return;
                     }
-                )
-            }    )
+                
+            
+        
                     console.log("CLIENTE AURA👶👶 Cadastrado com sucesso");
                     mostrarMenu();
-                })
+                
             })
         })
-    }
+     })
+   })
+})
 
+}
 
 function buscarClientePorId() {
     console.log("Buscar cliente por id");
@@ -217,7 +215,7 @@ function buscarClientePorId() {
     })
 }
 
-function encontrarclientePorId(id) {
+ function encontrarClientePorId(id) {
     for (let i = 0; i < Clientes.length; i++) {
         if (Clientes[i].id === id) {
             return Clientes[i];
